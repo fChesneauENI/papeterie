@@ -4,7 +4,7 @@
 	-> Delphine Séjourne
 	-> Cédric Thibaudault
 	->Jérome Courbet
-	-> François CHesneau
+	-> François Chesneau
 
 --> Dev en couches d'une papeterie
 
