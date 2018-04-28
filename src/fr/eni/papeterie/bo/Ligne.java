@@ -1,11 +1,18 @@
 package fr.eni.papeterie.bo;
 
-public class Ligne 
-{
-	private int qte;
-	private Article article;
+
+public class Ligne {
+	protected int qte;
+	protected Article article;
+
+	// Constructeur
+	public Ligne(Article article, int qte) {
+		super();
+		this.qte = qte;
+		this.article = article;
+	}
 	
-	//Getters/Setters
+	// getters et setters
 	public int getQte() {
 		return qte;
 	}
@@ -13,7 +20,7 @@ public class Ligne
 	public void setQte(int qte) {
 		this.qte = qte;
 	}
-
+	
 	public Article getArticle() {
 		return article;
 	}
@@ -22,20 +29,14 @@ public class Ligne
 		this.article = article;
 	}
 
-	public float getPrix()
-	{
+	public float getPrix() { 
 		return (this.article.getPrixUnitaire())*this.getQte();
 	}
-	
-	//Constructor
-	public Ligne (Article article,int qte) {
-		super();
-		this.qte = qte;
-		this.article = article;
-	}
 
+	// Méthode to String
 	@Override
 	public String toString() {
-		return "Ligne [qte=" + qte + ", article=" + article + " prix="+this.getPrix()+"]";
-	}	
+		return "Ligne [qte=" + qte  + ", prix="+this.article.getPrixUnitaire() + ", article=" + article;
+	}
+
 }

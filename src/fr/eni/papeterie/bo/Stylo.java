@@ -1,10 +1,28 @@
 package fr.eni.papeterie.bo;
 
-public class Stylo extends Article
-{
+
+public class Stylo extends Article {
+
 	private String couleur;
 
-	//Getters/Setters
+	// Constructeurs
+	public Stylo(Integer idArticle, String reference, String marque, String designation, float prixUnitaire,
+			int qteStock, String couleur) {
+		// TODO Auto-generated constructor stub
+		super(idArticle, reference, marque, designation, prixUnitaire, qteStock);
+		this.couleur = couleur;
+
+	}
+
+	public Stylo(String reference, String marque, String designation, float prixUnitaire, int qteStock,
+			String couleur) {
+		// TODO Auto-generated constructor stub
+		super(reference, marque, designation, prixUnitaire, qteStock);
+		this.couleur = couleur;
+
+	}
+
+	// getters et setters
 	public String getCouleur() {
 		return couleur;
 	}
@@ -13,24 +31,11 @@ public class Stylo extends Article
 		this.couleur = couleur;
 	}
 
-	//Constructors
-	public Stylo(int idArticle, String marque, String reference, String designation, float prixUnitaire, int qteStock,
-			String couleur) {
-		super(idArticle, marque, reference, designation, prixUnitaire, qteStock);
-		this.couleur = couleur;
-	}
-	public Stylo(String marque, String reference, String designation, float prixUnitaire, int qteStock,
-			String couleur) {
-		super(marque, reference, designation, prixUnitaire, qteStock);
-		this.couleur = couleur;
-	}
-
-	//toString
+	// Méthode to String
 	@Override
 	public String toString() {
-		return "Stylo [couleur=" + couleur + ", idArticle=" + this.getIdArticle() + ", reference=" + this.getReference() + ", marque="
-				+ this.getMarque() + ", designation=" + this.getDesignation() + ", prixUnitaire=" + this.getPrixUnitaire() + ", qteStock=" + this.getQteStock()
-				+ "]";
+		return "Article [idArticle=" + this.getIdArticle() + ", reference=" + this.getReference() + ", marque="
+				+ this.getMarque() + ", designation=" + this.getDesignation() + ", prixUnitaire=" + this.getPrixUnitaire() + ", "
+						+ "qteStock=" + this.getQteStock() +"] Stylo [couleur=" + this.getCouleur() +  "]";
 	}
-	
 }

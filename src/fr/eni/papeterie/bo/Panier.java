@@ -6,7 +6,6 @@ import java.util.List;
 public class Panier
 {
 	private float montant;
-	private Ligne ligne;	
 	private List <Ligne> lignesPanier= new ArrayList <Ligne>();
 	
 	//Getters/Setters
@@ -46,14 +45,21 @@ public class Panier
 	{
 		this.montant=0;
 	}
+	
 	@Override
 	public String toString() {
-		
 		String msg="";
+		String msg1="";
+		String msg2="";
+		int total= 0;
 		for (Ligne l:lignesPanier)
 		{
-			msg+="Ligne [ qte="+l.getQte()+", prix="+l.getPrix()+", article="+l.toString()+"]";
-		}
+			msg1+=" Ligne " + lignesPanier.indexOf(l)+ ": " + l.toString()+"] " + "\n";
+			total+=l.getPrix();
+			msg2="\nValeur du panier : " + total;
+		}		
+		msg=msg1+msg2;
 		return msg;
 	}
+
 }
